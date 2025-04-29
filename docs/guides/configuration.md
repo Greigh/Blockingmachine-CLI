@@ -128,11 +128,12 @@ This creates `.blockingmachinerc.json` in your home directory.
 ## Metadata Configuration
 
 ### Filter List Information
+
 ```json
 {
   "meta": {
     "title": "My Filter List",
-    "description": "Personal filter list combining multiple sources",
+    "description": "Blockingmachine filter list combining multiple sources",
     "homepage": "https://example.com",
     "version": "1.0.0",
     "expires": "1 day",

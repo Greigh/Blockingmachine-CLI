@@ -249,7 +249,7 @@ function validateCategory(category: string): CategoryName {
 
 function isValidCategory(category: string): category is CategoryName {
   
-  return ["personal", "privacy", "security", "advertising",
+  return ["blockingmachine", "privacy", "security", "advertising",
     "mobile", "gaming", "dns", "annoyances",
     "custom"].includes(category);
 }

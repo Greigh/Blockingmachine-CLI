@@ -1,38 +1,40 @@
 {
   "name": "@blockingmachine/cli",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "Generates comprehensive ad-blocking/privacy filter lists in the command line.",
   "homepage": "https://github.com/greigh/BlockingMachin-CLI#readme",
+  "license": "BSD-3-Clause",
   "type": "module",
-    "engines": {
+  "engines": {
     "node": ">=14.16"
   },
   "scripts": {
-    "build": "tsc --skipLibCheck",
-    "start": "node dist/src/cli.js",
+    "build": "tsc --skipLibCheck && chmod +x dist/cli.js",
+    "start": "node dist/cli.js",
     "dev": "tsc -w",
     "clean": "rimraf dist",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write \"src/**/*.ts\"",
     "test": "jest",
-    "prepare": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@blockingmachine/core": "1.0.0-beta.2",
+    "@blockingmachine/core": "1.0.0-beta.3",
     "@ghostery/trackerdb": "^1.0.526",
-    "axios": "^1.6.2",
-    "chalk": "5.4.1",
-    "dotenv": "^16.0.3",
-    "fs-extra": "^11.2.0",
-    "mongoose": "^8.13.2",
-    "node-fetch": "3.3.2",
-    "progress": "2.0.3",
+    "axios": "^1.9.0",
+    "chalk": "^5.4.1",
+    "cosmiconfig": "^9.0.0",
+    "dotenv": "^16.5.0",
+    "fs-extra": "^11.3.0",
+    "mongoose": "^8.14.0",
+    "node-fetch": "^3.3.2",
+    "progress": "^2.0.3",
     "punycode": "^2.3.1"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.14.1",
-    "@types/progress": "2.0.7",
+    "@types/node": "^22.15.3",
+    "@types/progress": "^2.0.7",
     "typescript": "^5.8.3"
   },
   "build": {
@@ -43,15 +45,20 @@
     }
   },
   "exports": {
-      ".": "./dist/lib/index.js",
-      "./export": "./dist/lib/export.js"
+    ".": "./dist/lib/index.js",
+    "./export": "./dist/lib/export.js"
   },
   "bin": {
-    "blockingmachine": "./dist/src/cli.js"
+    "blockingmachine": "./dist/cli.js"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/",
     "scope": "@blockingmachine"
-  }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
 }

@@ -7,11 +7,22 @@
 [![GitHub Release](https://img.shields.io/github/v/release/greigh/Blockingmachine-CLI)](https://github.com/greigh/Blockingmachine-CLI/releases)
 [![COMMITS](https://img.shields.io/github/commit-activity/m/greigh/Blockingmachine-CLI)](https://github.com/greigh/blockingmachine-cli/graphs/commit-activity)
 [![ISSUES](https://img.shields.io/github/issues/greigh/Blockingmachine-CLI)](https://github.com/greigh/blockingmachine-cli/issues)
-[![License](https://img.shields.io/github/license/greigh/Blockingmachine-CLI)](LICENSE)
+[![LICENSE](https://img.shields.io/github/license/greigh/Blockingmachine-CLI)](LICENSE)
+[![NPM VERSION](https://badge.fury.io/js/@blockingmachine%2Fcli.svg)](https://www.npmjs.com/package/@blockingmachine/cli)
+[![NPM DOWNLOADS](https://img.shields.io/npm/dt/@blockingmachine/cli)](https://www.npmjs.com/package/@blockingmachine/cli)
+[![CODE SIZE](https://img.shields.io/github/languages/code-size/greigh/blockingmachine-cli)](https://github.com/greigh/blockingmachine-cli)
 
 _Lists Last Updated: April 26, 2025_
 
 </div>
+
+## Description
+
+Blockingmachine CLI is a powerful command-line tool that streamlines the process of collecting, analyzing, and exporting ad-blocking and privacy filter lists. It aggregates rules from multiple trusted sources, intelligently deduplicates entries, categorizes blocking rules, and exports to various formats including AdGuard, hosts files, dnsmasq, and more. Designed for flexibility, the tool allows for custom filtering by category, priority, and tags, enabling both automated workflows and personalized filter list creation.
+
+### Related Projects
+- [Blockingmachine Core](https://github.com/greigh/blockingmachine-core) - Core functionality library
+- [Blockingmachine Desktop](https://github.com/greigh/Blockingmachine) - Desktop application for managing filter lists
 
 ---
 
@@ -27,6 +38,69 @@ blockingmachine init
 blockingmachine import
 blockingmachine export adguard
 ```
+
+## Timeline
+
+### Current Release (v1.0.0-beta.3)
+- 🚀 Full integration with @blockingmachine/core
+- 💪 TypeScript support
+- 📥 Multiple source list support
+- 🔄 Rule categorization and filtering
+- ⚡ Multi-format export capabilities
+- ✅ Advanced configuration options
+- 🐞 Bug fixes and performance improvements
+
+### Upcoming Features (v1.0.0)
+- 📊 Enhanced statistics and reporting
+- 🔍 Improved pattern matching and rule validation
+- 📋 Support for additional export formats
+- 🌐 Better network resilience and retry logic
+- 🎯 Rule optimization commands
+- 📦 Smaller installation footprint
+- 🧪 Extended test coverage
+
+### Future Roadmap (v1.x+)
+- 🔄 Streaming processing for large rule sets
+- 🌍 Internationalization support
+- 🔒 Enhanced security features
+- 📈 Performance optimizations
+- 🧩 Plugin system for custom rule processors
+- 🤝 Third-party service integrations
+- 🛠️ Advanced debugging and troubleshooting tools
+
+### Version History
+
+#### 1.0.0-beta.3 (Current)
+- Added parallel processing capabilities
+- Fixed MongoDB connection handling issues
+- Added more comprehensive export formats
+- Improved command-line argument parsing
+- Enhanced logging and error reporting
+- Fixed NPM packaging issues
+
+#### 1.0.0-beta.2
+- Added support for multiple export formats
+- Enhanced configuration options
+- Improved rule categorization
+- Fixed dependency resolution issues
+- Optimized database operations
+
+#### 1.0.0-beta.1
+- Initial public release
+- Core commands (import/export) stable
+- Basic documentation
+- Essential features implemented
+
+#### 0.9.0 (Internal)
+- Feature complete CLI
+- Internal testing and validation
+- Performance optimization
+- Documentation drafting
+
+#### 0.5.0 (Development)
+- Command structure implementation
+- Basic feature development
+- Initial testing setup
 
 ## Features
 
@@ -280,10 +354,5 @@ We use ESLint and Prettier to maintain code quality. Before submitting a pull re
 
 ## License
 This project is licensed under the BSD-3-Clause License.
-
-## Related Projects
-
-- [BlockingMachine Core](https://github.com/greigh/Blockingmachine-cli/tree/main/packages/core) - Core functionality library
-- [BlockingMachine CLI](https://github.com/greigh/Blockingmachine-cli/tree/main/packages/cli) - Command line interface
 
 <div align="center"> Made with ❤️ by <a href="https://danielhipskind.com/">Daniel Hipskind</a> </div>

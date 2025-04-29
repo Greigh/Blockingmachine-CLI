@@ -10,7 +10,7 @@ export enum CategoryType {
   CUSTOM = 'custom'
 }
 
-export type CategoryName = keyof typeof CategoryType | 'personal' | 'privacy' | 'security' | 'mobile' | 'gaming' | 'dns' | 'annoyances' | 'custom';
+export type CategoryName = keyof typeof CategoryType | 'blockingmachine' | 'privacy' | 'security' | 'mobile' | 'gaming' | 'dns' | 'annoyances' | 'custom';
 
 export interface Category {
   name: CategoryName;
@@ -57,9 +57,9 @@ export const CATEGORIES: Record<CategoryName, Category> = {
     enabled: true
   },
   // Add the missing string literal categories that your validators check
-  personal: {
-    name: 'personal',
-    description: 'Personal blocklist',
+  blockingmachine: {
+    name: 'blockingmachine',
+    description: 'Blockingmachine list',
     priority: 5,
     enabled: true
   },

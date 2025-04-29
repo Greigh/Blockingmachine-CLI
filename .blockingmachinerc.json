@@ -79,9 +79,9 @@
       "enabled": true
     },
     {
-      "name": "Personal Rules",
-      "url": "file:///Users/hipskind/Coding/BlockingMachine/packages/cli/filters-backup/input/personalrules.txt",
-      "category": "personal",
+      "name": "Blockingmachine Rules",
+      "url": "./filters/input/blockingmachine-rules.txt",
+      "category": "Blockingmachine",
       "enabled": true
     }
   ]
