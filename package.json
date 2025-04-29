@@ -1,0 +1,57 @@
+{
+  "name": "@blockingmachine/cli",
+  "version": "1.0.0-beta.2",
+  "description": "Generates comprehensive ad-blocking/privacy filter lists in the command line.",
+  "homepage": "https://github.com/greigh/BlockingMachin-CLI#readme",
+  "type": "module",
+    "engines": {
+    "node": ">=14.16"
+  },
+  "scripts": {
+    "build": "tsc --skipLibCheck",
+    "start": "node dist/src/cli.js",
+    "dev": "tsc -w",
+    "clean": "rimraf dist",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "test": "jest",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@blockingmachine/core": "1.0.0-beta.2",
+    "@ghostery/trackerdb": "^1.0.526",
+    "axios": "^1.6.2",
+    "chalk": "5.4.1",
+    "dotenv": "^16.0.3",
+    "fs-extra": "^11.2.0",
+    "mongoose": "^8.13.2",
+    "node-fetch": "3.3.2",
+    "progress": "2.0.3",
+    "punycode": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.14.1",
+    "@types/progress": "2.0.7",
+    "typescript": "^5.8.3"
+  },
+  "build": {
+    "publish": {
+      "provider": "github",
+      "owner": "greigh",
+      "repo": "Blockingmachine-CLI"
+    }
+  },
+  "exports": {
+      ".": "./dist/lib/index.js",
+      "./export": "./dist/lib/export.js"
+  },
+  "bin": {
+    "blockingmachine": "./dist/src/cli.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "scope": "@blockingmachine"
+  }
+}
