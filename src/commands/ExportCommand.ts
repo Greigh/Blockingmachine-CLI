@@ -6,7 +6,7 @@ import {
   defaultFilterMeta,
   createPaths,
   defaultPerformance
-} from '../../../core/dist/index.js';
+} from '@blockingmachine/core';
 
 export class ExportCommand extends BaseCommand<ExportOptions> {
   constructor(options: CommandOptions) {
