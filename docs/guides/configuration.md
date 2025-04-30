@@ -137,7 +137,7 @@ This creates `.blockingmachinerc.json` in your home directory.
     "homepage": "https://example.com",
     "version": "1.0.0",
     "expires": "1 day",
-    "license": "MIT"
+    "license": "BSD-3-Clause",
   }
 }
 ```

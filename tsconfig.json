@@ -9,11 +9,6 @@
     "esModuleInterop": true,
     "declaration": true,
     "sourceMap": true,
-    "paths": {
-      "@blockingmachine/core": [
-        "../core/dist"
-      ]
-    },
     "typeRoots": [
       "./node_modules/@types",
       "./src/types"
