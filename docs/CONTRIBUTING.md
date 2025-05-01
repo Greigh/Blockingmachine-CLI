@@ -1,10 +1,10 @@
-# Contributing to BlockingMachine
+# Contributing to Blockingmachine
 
-First off, thank you for considering contributing to BlockingMachine! Everyone can help make this tool better.
+First off, thank you for considering contributing to Blockingmachine! Everyone can help make this tool better.
 
 ## Table of Contents
 
-- [Contributing to BlockingMachine](#contributing-to-blockingmachine)
+- [Contributing to Blockingmachine](#contributing-to-blockingmachine)
   - [Table of Contents](#table-of-contents)
   - [Code of Conduct](#code-of-conduct)
   - [How Can I Help?](#how-can-i-help)
@@ -23,6 +23,7 @@ First off, thank you for considering contributing to BlockingMachine! Everyone c
   - [Project Structure](#project-structure)
   - [Questions?](#questions)
   - [License](#license)
+- [By contributing, you agree that your contributions will be licensed under the project's MIT License.](#by-contributing-you-agree-that-your-contributions-will-be-licensed-under-the-projects-mit-license)
 
 ## Code of Conduct
 
@@ -35,11 +36,11 @@ By participating in this project, you agree to abide by our [Code of Conduct](CO
 If a website isn't working properly or something is blocked that shouldn't be:
 
 1. **Check if Already Reported**
-   - Search [existing issues](https://github.com/Greigh/BlockingMachine/issues) first
+   - Search [existing issues](https://github.com/Greigh/Blockingmachine/issues) first
    - Look for the website name or similar problems
 
 2. **Report the Problem**
-   - Visit our [Issue Tracker](https://github.com/Greigh/BlockingMachine/issues/new)
+   - Visit our [Issue Tracker](https://github.com/Greigh/Blockingmachine/issues/new)
    - Include:
      - Website URL
      - What's not working (videos, images, checkout, etc.)
@@ -72,7 +73,7 @@ If a website isn't working properly or something is blocked that shouldn't be:
 Found ads or trackers we're missing?
 
 1. **Check Current Lists**
-   - Search our [existing filters](https://github.com/Greigh/BlockingMachine/issues?q=label%3Awebsite-suggestion)
+   - Search our [existing filters](https://github.com/Greigh/Blockingmachine/issues?q=label%3Awebsite-suggestion)
 
 2. **Submit New Website**
    - Provide the website URL
@@ -81,13 +82,13 @@ Found ads or trackers we're missing?
 
 ### Other Ways to Help
 
-- **Share Your Experience**: Tell us how BlockingMachine works for you
+- **Share Your Experience**: Tell us how Blockingmachine works for you
 - **Spread the Word**: Star the repository if you find it useful
 - **Help Others**: Answer questions in issues
 
 ### Reporting Bugs
 
-1. **Check Existing Issues** - Search the [issue tracker](https://github.com/Greigh/BlockingMachine/issues) to avoid duplicates
+1. **Check Existing Issues** - Search the [issue tracker](https://github.com/Greigh/Blockingmachine/issues) to avoid duplicates
 2. **Use the Bug Report Template** - When creating a new issue, use the bug report template
 3. **Provide Details** - Include:
    - Your environment (OS, Node.js version, etc.)
@@ -97,7 +98,7 @@ Found ads or trackers we're missing?
 
 ### Suggesting Enhancements
 
-1. **Check Existing Suggestions** - Search [existing suggestions](https://github.com/Greigh/BlockingMachine/issues?q=is%3Aissue+label%3Aenhancement)
+1. **Check Existing Suggestions** - Search [existing suggestions](https://github.com/Greigh/Blockingmachine/issues?q=is%3Aissue+label%3Aenhancement)
 2. **Use the Feature Request Template** - When creating a new suggestion
 3. **Be Specific** - Explain why this enhancement would be useful
 
@@ -148,8 +149,8 @@ Found ads or trackers we're missing?
 2. **Installation**
 
    ```bash
-   git clone https://github.com/YourUsername/BlockingMachine.git
-   cd BlockingMachine
+   git clone https://github.com/YourUsername/Blockingmachine.git
+   cd Blockingmachine
    npm install
    ```
 
@@ -220,7 +221,7 @@ We provide several issue templates:
 ## Project Structure
 
 ```plaintext
-BlockingMachine/
+Blockingmachine/
 ├── src/                # Source code
 ├── public/            
 │   └── filters/       # Generated filter lists
@@ -238,4 +239,4 @@ Feel free to [open an issue](https://github.com/Greigh/Blockingmachine-cli/issue
 By contributing, you agree that your contributions will be licensed under the project's MIT License.
 =======
 By contributing, you agree that your contributions will be licensed under the project's BSD-3 Clause License.
->>>>>>> e1f1ac0 (feat: Implement core functionality for BlockingMachine filter list manager)
+>>>>>>> e1f1ac0 (feat: Implement core functionality for Blockingmachine filter list manager)

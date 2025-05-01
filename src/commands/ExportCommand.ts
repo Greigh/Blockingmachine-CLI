@@ -24,7 +24,7 @@ export class ExportCommand extends BaseCommand<ExportOptions> {
         ...(config.meta || {}),
         // Only set these if not provided in config.meta
         ...(config.meta?.title ? {} : { 
-          title: "BlockingMachine Filter List" 
+          title: "Blockingmachine Filter List" 
         }),
         ...(config.meta?.description ? {} : {
           description: "Combined filter list"

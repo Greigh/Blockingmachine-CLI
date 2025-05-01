@@ -2,7 +2,7 @@
 
 ## Overview
 
-BlockingMachine processes filter rules through several stages:
+Blockingmachine processes filter rules through several stages:
 1. Download and parsing
 2. Classification and validation
 3. Mobile detection

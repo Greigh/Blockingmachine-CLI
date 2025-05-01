@@ -1,4 +1,4 @@
-# BlockingMachine CLI Examples
+# Blockingmachine CLI Examples
 
 ## Basic Usage
 

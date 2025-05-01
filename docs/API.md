@@ -1,4 +1,4 @@
-# BlockingMachine CLI API Documentation
+# Blockingmachine CLI API Documentation
 
 ## Command Context
 

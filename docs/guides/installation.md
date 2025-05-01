@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Before installing BlockingMachine CLI, ensure you have:
+Before installing Blockingmachine CLI, ensure you have:
 
 - Node.js v20 or later
 - MongoDB v6.0 or later

@@ -20,13 +20,13 @@
   },
   "dependencies": {
     "@blockingmachine/core": "1.0.0-beta.3",
-    "@ghostery/trackerdb": "^1.0.526",
+    "@ghostery/trackerdb": "^1.0.530",
     "axios": "^1.9.0",
     "chalk": "^5.4.1",
     "cosmiconfig": "^9.0.0",
     "dotenv": "^16.5.0",
     "fs-extra": "^11.3.0",
-    "mongoose": "^8.14.0",
+    "mongoose": "^8.14.1",
     "node-fetch": "^3.3.2",
     "progress": "^2.0.3",
     "punycode": "^2.3.1"

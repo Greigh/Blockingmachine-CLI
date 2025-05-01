@@ -1,9 +1,9 @@
 import type { FilterMetaConfig } from '../types.js';
 
 export const defaultMetaConfig: FilterMetaConfig = {
-  title: "BlockingMachine Filter List",
+  title: "Blockingmachine Filter List",
   description: "Combined filter list from multiple sources",
-  madeby: "BlockingMachine",
+  madeby: "Blockingmachine",
   homepage: "https://github.com/danielhipskind/blockingmachine",
   website: "https://github.com/danielhipskind/blockingmachine",
   expires: "1 day",

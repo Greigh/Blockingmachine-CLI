@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="../../assets/blockingmachine.png" width="200" alt="BlockingMachine Logo" />
+  <img src="../../assets/blockingmachine.png" width="200" alt="Blockingmachine Logo" />
 
-# BlockingMachine
+# Blockingmachine
 
 [![GitHub Actions](https://github.com/greigh/blockingmachine-cli/workflows/CI/badge.svg)](https://github.com/greigh/blockingmachine-cli/actions)
 [![GitHub Release](https://img.shields.io/github/v/release/greigh/Blockingmachine-CLI)](https://github.com/greigh/Blockingmachine-CLI/releases)
