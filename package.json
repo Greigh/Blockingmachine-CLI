@@ -19,21 +19,21 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@blockingmachine/core": "1.0.0-beta.3",
-    "@ghostery/trackerdb": "^1.0.530",
+    "@blockingmachine/core": "1.0.0-beta.5",
+    "@ghostery/trackerdb": "^1.0.573",
     "axios": "^1.9.0",
     "chalk": "^5.4.1",
     "cosmiconfig": "^9.0.0",
     "dotenv": "^16.5.0",
     "fs-extra": "^11.3.0",
-    "mongoose": "^8.14.1",
+    "mongoose": "^8.15.1",
     "node-fetch": "^3.3.2",
     "progress": "^2.0.3",
     "punycode": "^2.3.1"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.15.3",
+    "@types/node": "^24.0.0",
     "@types/progress": "^2.0.7",
     "typescript": "^5.8.3"
   },
