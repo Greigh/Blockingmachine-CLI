@@ -28,13 +28,9 @@ const ruleSchema = new mongoose.Schema({
   },
   variants: [{
     rule: String,
-    sourceId: String,
+    source: String, // Changed from sourceId to source
     dateAdded: Date,
-    modifiers: [{
-      type: String,
-      value: String,
-      domains: [String]
-    }],
+    modifiers: [String], // Changed from objects to simple strings
     tags: [String]
   }]
 });

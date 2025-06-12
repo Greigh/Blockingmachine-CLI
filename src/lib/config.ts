@@ -1,43 +1,22 @@
 import { z } from 'zod';
 import { cosmiconfig } from 'cosmiconfig';
-import { CATEGORIES, type CategoryName } from '../types.js';
 
-const categorySchema = z.enum(Object.keys(CATEGORIES) as [CategoryName, ...CategoryName[]]);
+const categorySchema = z.string();
 
 const sourceSchema = z.object({
   name: z.string(),
-  url: z.string()
-    .url()
-    .or(z.string().startsWith('file:///')),
-  category: categorySchema
-    .describe('Category must be one of: ' + Object.keys(CATEGORIES).join(', '))
-    .transform((cat) => validateCategory(cat)),
+  url: z.string().url(),
+  category: categorySchema,
   enabled: z.boolean().default(true),
-  priority: z.number()
-    .optional()
-    .transform((p, ctx) => {
-      const category = ctx.path[ctx.path.length - 2] as CategoryName;
-      return p ?? CATEGORIES[category].priority;
-    })
+  priority: z.number().optional()
 });
 
 const configSchema = z.object({
-  mongodb: z.object({
-    uri: z.string().default('mongodb://localhost:27017/blockingmachine'),
-    options: z.object({
-      maxPoolSize: z.number().default(10),
-    }).default({}),
-  }).default({}),
   output: z.object({
     directory: z.string().default('./filters/output'),
   }).default({}),
   sources: z.array(sourceSchema)
     .min(1, 'At least one source is required')
-    .refine(sources => {
-      const urls = sources.map(s => s.url);
-      const uniqueUrls = new Set(urls);
-      return urls.length === uniqueUrls.size;
-    }, 'Duplicate URLs found in sources')
 });
 
 export type Config = z.infer<typeof configSchema>;
@@ -59,14 +38,4 @@ export async function loadConfig(): Promise<Config> {
     }
     throw error;
   }
-}
-
-export function validateCategory(category: string): CategoryName {
-  if (!(category in CATEGORIES)) {
-    const validCategories = Object.keys(CATEGORIES).join(', ');
-    throw new Error(
-      `Invalid category: "${category}". Must be one of: ${validCategories}`
-    );
-  }
-  return category as CategoryName;
 }

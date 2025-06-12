@@ -1,6 +1,6 @@
 {
   "name": "@blockingmachine/cli",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.6",
   "description": "Generates comprehensive ad-blocking/privacy filter lists in the command line.",
   "homepage": "https://github.com/greigh/BlockingMachin-CLI#readme",
   "license": "BSD-3-Clause",
@@ -19,17 +19,16 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@blockingmachine/core": "1.0.0-beta.5",
+    "@blockingmachine/core": "^1.0.0-beta.6",
     "@ghostery/trackerdb": "^1.0.573",
     "axios": "^1.9.0",
     "chalk": "^5.4.1",
+    "commander": "^14.0.0",
     "cosmiconfig": "^9.0.0",
     "dotenv": "^16.5.0",
     "fs-extra": "^11.3.0",
-    "mongoose": "^8.15.1",
     "node-fetch": "^3.3.2",
-    "progress": "^2.0.3",
-    "punycode": "^2.3.1"
+    "progress": "^2.0.3"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",

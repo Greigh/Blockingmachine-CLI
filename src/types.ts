@@ -125,17 +125,14 @@ export interface FilterSource extends Source {
 // Rule-related types
 export type RuleType = 'domain' | 'regex' | 'exception' | 'cosmetic' | 'unknown';
 
-export interface RuleModifier {
-  type: string;
-  value?: string;
-  domains?: string[];
-}
+// Simplified modifier type - just strings now
+export type RuleModifier = string;
 
 export interface RuleVariant {
   rule: string;
   source: string;
   dateAdded: Date;
-  modifiers: RuleModifier[];
+  modifiers: string[]; // Changed from RuleModifier[] to string[]
   tags: string[];
 }
 

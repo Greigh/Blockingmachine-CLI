@@ -11,7 +11,6 @@ import type { CommandOptions } from '../commands/BaseCommand.js';
 import { StoredRuleModel } from './db.js';
 import fetch from 'node-fetch';
 import ProgressBar from 'progress';
-import chalk from 'chalk';
 import crypto from 'crypto';
 
 function determineRuleType(rule: string): RuleType {
@@ -54,8 +53,8 @@ function isMobileRule(rule: string, source: FilterSource): boolean {
     mobilePatterns.some(pattern => pattern.test(rule));
 }
 
-function parseModifiers(rule: string): RuleModifier[] {
-  const modifiers: RuleModifier[] = [];
+function parseModifiers(rule: string): string[] {
+  const modifiers: string[] = [];
   const dollarIndex = rule.lastIndexOf('$');
   
   if (dollarIndex === -1) return modifiers;
@@ -64,16 +63,8 @@ function parseModifiers(rule: string): RuleModifier[] {
   const parts = modifierString.split(',');
   
   for (const part of parts) {
-    const [name, value] = part.split('=');
-    
-    if (name === 'domain') {
-      const domains = value?.split('|') || [];
-      modifiers.push({ type: 'domain', domains });
-    } else if (value) {
-      modifiers.push({ type: name, value });
-    } else {
-      modifiers.push({ type: name });
-    }
+    // Just store the modifier as a string, don't parse into objects
+    modifiers.push(part.trim());
   }
   
   return modifiers;
@@ -115,7 +106,7 @@ function processRule(raw: string, source: FilterSource): StoredRule | null {
       rule: raw,
       source: source.name,
       dateAdded: new Date(),
-      modifiers,
+      modifiers, // Now an array of strings, not objects
       tags: mobile ? ['mobile'] : []
     }]
   };
@@ -193,20 +184,21 @@ export class ImportProcessor {
 
     for (const source of this.config.sources) {
       if (!source.enabled) continue;
-      const category = validateCategory(source.category);
-
 
       try {
-
         const validSource: FilterSource = {
           ...source,
           enabled: source.enabled ?? true,
-          priority: source.priority ?? (source.category ? 
-            (CATEGORIES[source.category as CategoryName]?.priority || 50) : 50),
+          priority: source.priority ?? 50,
           trusted: source.trusted ?? false
         };
 
-        validateSource(validSource);
+        // Simple validation - just check required fields
+        if (!validSource.name || !validSource.url || !validSource.category) {
+          this.logger.error(`✗ ${validSource.name || 'Unknown'}: Missing required fields`);
+          continue;
+        }
+
         const text = await fetchWithRetry(validSource.url);
         if (!text) {
           throw new Error(`Failed to fetch source: ${validSource.url}`);
@@ -237,64 +229,6 @@ export class ImportProcessor {
     }
 
     return stats;
-  }
-}
-
-function validateCategory(category: string): CategoryName {
-  if (!isValidCategory(category)) {
-    throw new Error(`Invalid category: ${category}`);
-  }
-  return category;
-}
-
-function isValidCategory(category: string): category is CategoryName {
-  
-  return ["blockingmachine", "privacy", "security", "advertising",
-    "mobile", "gaming", "dns", "annoyances",
-    "custom"].includes(category);
-}
-
-function validateSource(source: FilterSource): asserts source is FilterSource {
-  if (!source.name || !source.url) {
-    throw new Error('Source must have name and url');
-  }
-  
-  const category = validateCategory(source.category);
-  
-  // Mutate the source object instead of returning
-  source.enabled = source.enabled ?? true;
-  source.priority = source.priority ?? (source.category ? 
-    (CATEGORIES[source.category as CategoryName]?.priority || 50) : 50),
-  source.trusted = source.trusted ?? false;
-  source.category = category;
-}
-
-// Use in processing
-export async function processSource(source: FilterSource): Promise<void> {
-  // Set defaults before validation
-  const validSource: FilterSource = {
-    ...source,
-    enabled: source.enabled ?? true,
-    priority: source.priority ?? (source.category ? 
-      (CATEGORIES[source.category as CategoryName]?.priority || 50) : 50),
-    trusted: source.trusted ?? false
-  };
-  
-  validateSource(validSource);
-  
-  const text = await fetchWithRetry(validSource.url);
-  if (!text) {
-    throw new Error(`Failed to fetch source: ${validSource.url}`);
-  }
-
-  const parsedRules = text
-    .split('\n')
-    .map(line => processRule(line.trim(), validSource))
-    .filter((rule): rule is StoredRule => rule !== null);
-  
-  for (const rule of parsedRules) {
-    const existingRule = await StoredRuleModel.findOne({ raw: rule.raw });
-    await handleRuleConflict(rule, existingRule);
   }
 }
 
