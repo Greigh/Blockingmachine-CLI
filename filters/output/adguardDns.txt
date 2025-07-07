@@ -1,6 +1,6 @@
 ! Title: BlockingMachine AdGuard List
 ! Description: Combined filter list optimized for AdGuard
-! Homepage: https://github.com/danielhipskind/blockingmachine
+! Homepage: https://github.com/greigh/blockingmachine
 ! License: BSD-3-Clause
 ! Made by: Daniel Hipskind
 ! Version: 3.0.0

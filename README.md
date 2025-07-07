@@ -1,3 +1,4 @@
+
 <div align="center">
   <img src="../../assets/blockingmachine.png" width="200" alt="Blockingmachine Logo" />
 
@@ -11,9 +12,6 @@
 [![NPM VERSION](https://badge.fury.io/js/@blockingmachine%2Fcli.svg)](https://www.npmjs.com/package/@blockingmachine/cli)
 [![NPM DOWNLOADS](https://img.shields.io/npm/dt/@blockingmachine/cli)](https://www.npmjs.com/package/@blockingmachine/cli)
 [![CODE SIZE](https://img.shields.io/github/languages/code-size/greigh/blockingmachine-cli)](https://github.com/greigh/blockingmachine-cli)
-
-_Lists Last Updated: April 26, 2025_
-
 </div>
 
 ## Description
@@ -21,12 +19,14 @@ _Lists Last Updated: April 26, 2025_
 Blockingmachine CLI is a powerful command-line tool that streamlines the process of collecting, analyzing, and exporting ad-blocking and privacy filter lists. It aggregates rules from multiple trusted sources, intelligently deduplicates entries, categorizes blocking rules, and exports to various formats including AdGuard, hosts files, dnsmasq, and more. Designed for flexibility, the tool allows for custom filtering by category, priority, and tags, enabling both automated workflows and personalized filter list creation.
 
 ### Related Projects
+
 - [Blockingmachine Core](https://github.com/greigh/blockingmachine-core) - Core functionality library
 - [Blockingmachine Desktop](https://github.com/greigh/Blockingmachine) - Desktop application for managing filter lists
 
 ---
 
 ## Quick Start
+
 ```bash
 # Install globally
 npm install -g @blockingmachine/cli
@@ -42,6 +42,7 @@ blockingmachine export adguard
 ## Timeline
 
 ### Current Release (v1.0.0-beta.3)
+
 - 🚀 Full integration with @blockingmachine/core
 - 💪 TypeScript support
 - 📥 Multiple source list support
@@ -51,6 +52,7 @@ blockingmachine export adguard
 - 🐞 Bug fixes and performance improvements
 
 ### Upcoming Features (v1.0.0)
+
 - 📊 Enhanced statistics and reporting
 - 🔍 Improved pattern matching and rule validation
 - 📋 Support for additional export formats
@@ -60,6 +62,7 @@ blockingmachine export adguard
 - 🧪 Extended test coverage
 
 ### Future Roadmap (v1.x+)
+
 - 🔄 Streaming processing for large rule sets
 - 🌍 Internationalization support
 - 🔒 Enhanced security features
@@ -71,6 +74,7 @@ blockingmachine export adguard
 ### Version History
 
 #### 1.0.0-beta.3 (Current)
+
 - Added parallel processing capabilities
 - Fixed MongoDB connection handling issues
 - Added more comprehensive export formats
@@ -79,6 +83,7 @@ blockingmachine export adguard
 - Fixed NPM packaging issues
 
 #### 1.0.0-beta.2
+
 - Added support for multiple export formats
 - Enhanced configuration options
 - Improved rule categorization
@@ -86,18 +91,21 @@ blockingmachine export adguard
 - Optimized database operations
 
 #### 1.0.0-beta.1
+
 - Initial public release
 - Core commands (import/export) stable
 - Basic documentation
 - Essential features implemented
 
 #### 0.9.0 (Internal)
+
 - Feature complete CLI
 - Internal testing and validation
 - Performance optimization
 - Documentation drafting
 
 #### 0.5.0 (Development)
+
 - Command structure implementation
 - Basic feature development
 - Initial testing setup
@@ -105,6 +113,7 @@ blockingmachine export adguard
 ## Features
 
 ### Enhanced Rule Processing
+
 - **Smart Rule Classification**: Automatically detects and categorizes rules:
   - Domain-based blocking rules
   - Regular expression patterns
@@ -117,21 +126,28 @@ blockingmachine export adguard
   - Platform-specific rules
 
 ### Advanced Filtering
+
 - **Category-Based Management**:
+
   ```bash
   blockingmachine export --categories privacy,security
   blockingmachine export --exclude advertising,gaming
   ```
+
 - **Priority System**:
+
   ```bash
   blockingmachine export --min-priority 80
   ```
+
 - **Tag-Based Filtering**:
+
   ```bash
   blockingmachine export --tags mobile,trusted
   ```
 
 ### Multiple Export Formats
+
 - **DNS-Based Formats**:
   - Hosts files (`hosts`)
   - dnsmasq configuration (`dnsmasq`)
@@ -145,6 +161,7 @@ blockingmachine export adguard
   - Shadowrocket configuration (`shadowrocket`)
 
 ### Database Management
+
 ```bash
 # Import and process rules
 blockingmachine import
@@ -162,6 +179,7 @@ blockingmachine cleanup --drop  # Development only
 ```
 
 ### Configuration
+
 ```json
 {
   "mongodb": {
@@ -186,15 +204,19 @@ blockingmachine cleanup --drop  # Development only
 ```
 
 ### Logging and Debugging
+
 - **Detailed Logging**:
+
   ```bash
   blockingmachine --debug import
   ```
+
 - **Log Files**:
   - `logs/error.log`: Error-level messages
   - `logs/combined.log`: All log levels
 
 ### Rule Processing Pipeline
+
 ```mermaid
 graph TD
     A[Download Rules] --> B[Parse & Classify]
@@ -205,7 +227,9 @@ graph TD
 ```
 
 ### Performance Optimization
+
 - **Caching System**:
+
   ```bash
   # Enable caching in .blockingmachinerc.json
   {
@@ -216,10 +240,12 @@ graph TD
     }
   }
   ```
+
 - **Batch Processing**: Rules are processed in configurable batch sizes
 - **Parallel Processing**: Multi-threaded rule processing for better performance
 
 ### Error Handling
+
 ```bash
 # View detailed error logs
 blockingmachine --debug import
@@ -229,7 +255,9 @@ blockingmachine validate --fix
 ```
 
 ### Contributing
+
 - **Setting up the development environment**:
+
   ```bash
   # Fork and clone the repository
   git clone https://github.com/yourusername/blockingmachine-cli.git
@@ -246,6 +274,7 @@ blockingmachine validate --fix
   ```
 
 - **Running Tests**:
+
   ```bash
   # Run all tests
   npm test
@@ -258,6 +287,7 @@ blockingmachine validate --fix
   ```
 
 ### Environment Variables
+
 ```bash
 # Development mode
 NODE_ENV=development
@@ -278,7 +308,9 @@ ENABLE_PARALLEL_PROCESSING=true
 ### Troubleshooting
 
 #### Common Issues
+
 1. **MongoDB Connection Issues**
+
    ```bash
    # Check MongoDB status
    brew services list | grep mongodb
@@ -288,12 +320,14 @@ ENABLE_PARALLEL_PROCESSING=true
    ```
 
 2. **Permission Issues**
+
    ```bash
    # Fix output directory permissions
    chmod 755 ./filters/output
    ```
 
 3. **Memory Issues**
+
    ```bash
    # Increase Node.js memory limit
    export NODE_OPTIONS="--max-old-space-size=4096"
@@ -302,6 +336,7 @@ ENABLE_PARALLEL_PROCESSING=true
 ### API Documentation
 
 #### Command Context
+
 ```typescript
 interface CommandContext {
   config: AppConfig;
@@ -311,6 +346,7 @@ interface CommandContext {
 ```
 
 #### Export Options
+
 ```typescript
 interface ExportOptions {
   formats?: SupportedFormat[];
@@ -353,6 +389,7 @@ We use ESLint and Prettier to maintain code quality. Before submitting a pull re
 - **@blockingmachine/core**: Core rule processing functionality
 
 ## License
+
 This project is licensed under the BSD-3-Clause License.
 
 <div align="center"> Made with ❤️ by <a href="https://danielhipskind.com/">Daniel Hipskind</a> </div>

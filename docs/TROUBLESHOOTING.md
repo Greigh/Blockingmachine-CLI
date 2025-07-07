@@ -5,12 +5,15 @@
 ### MongoDB Connection Issues
 
 #### Problem: Cannot Connect to MongoDB
+
 ```bash
 Error: MongoServerError: connect ECONNREFUSED 127.0.0.1:27017
 ```
 
 **Solutions:**
+
 1. Check if MongoDB is running:
+
 ```bash
 # Check MongoDB status
 brew services list | grep mongodb
@@ -20,6 +23,7 @@ brew services start mongodb-community
 ```
 
 2. Verify MongoDB URI in configuration:
+
 ```json
 {
   "mongodb": {
@@ -34,17 +38,21 @@ brew services start mongodb-community
 ### Memory Issues
 
 #### Problem: JavaScript Heap Out of Memory
+
 ```bash
 FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed
 ```
 
 **Solutions:**
+
 1. Increase Node.js memory limit:
+
 ```bash
 export NODE_OPTIONS="--max-old-space-size=4096"
 ```
 
 2. Enable batch processing in configuration:
+
 ```json
 {
   "performance": {
@@ -59,12 +67,15 @@ export NODE_OPTIONS="--max-old-space-size=4096"
 ### Permission Issues
 
 #### Problem: Cannot Write to Output Directory
+
 ```bash
 Error: EACCES: permission denied, open './filters/output/adguard.txt'
 ```
 
 **Solutions:**
+
 1. Fix directory permissions:
+
 ```bash
 # Check current permissions
 ls -la ./filters/output
@@ -74,6 +85,7 @@ chmod 755 ./filters/output
 ```
 
 2. Update output directory in configuration:
+
 ```json
 {
   "output": {
@@ -85,12 +97,15 @@ chmod 755 ./filters/output
 ### Import Issues
 
 #### Problem: Rules Not Being Imported
+
 ```bash
 Warning: No rules imported from source "ExampleList"
 ```
 
 **Solutions:**
+
 1. Check source configuration:
+
 ```json
 {
   "sources": [
@@ -104,6 +119,7 @@ Warning: No rules imported from source "ExampleList"
 ```
 
 2. Verify network connectivity:
+
 ```bash
 # Test URL accessibility
 curl -I https://example.com/rules.txt
@@ -112,17 +128,21 @@ curl -I https://example.com/rules.txt
 ### Export Issues
 
 #### Problem: Missing Export Format
+
 ```bash
 Error: Unsupported export format "customformat"
 ```
 
 **Solutions:**
+
 1. Check available formats:
+
 ```bash
 blockingmachine export --help
 ```
 
 2. Use correct format name:
+
 ```bash
 blockingmachine export adguard
 ```
@@ -130,6 +150,7 @@ blockingmachine export adguard
 ## Diagnostic Tools
 
 ### View Database Status
+
 ```bash
 # Check database statistics
 blockingmachine view
@@ -139,6 +160,7 @@ blockingmachine view --sample 10
 ```
 
 ### Validate Configuration
+
 ```bash
 # Check configuration
 blockingmachine validate
@@ -148,6 +170,7 @@ blockingmachine validate --fix
 ```
 
 ### Debug Mode
+
 ```bash
 # Enable debug logging
 blockingmachine --debug import
@@ -159,11 +182,13 @@ blockingmachine --debug import > debug.log 2>&1
 ## Log Files
 
 ### Location
+
 - Error logs: `./logs/error.log`
 - Combined logs: `./logs/combined.log`
 - Debug logs: `./logs/debug.log`
 
 ### Viewing Logs
+
 ```bash
 # View last 50 error logs
 tail -n 50 ./logs/error.log
@@ -177,7 +202,9 @@ grep "MongoServerError" ./logs/combined.log
 ### Slow Import Processing
 
 **Solutions:**
+
 1. Enable caching:
+
 ```json
 {
   "performance": {
@@ -191,6 +218,7 @@ grep "MongoServerError" ./logs/combined.log
 ```
 
 2. Adjust batch processing:
+
 ```json
 {
   "performance": {
@@ -206,11 +234,14 @@ grep "MongoServerError" ./logs/combined.log
 ## Getting Help
 
 ### Community Support
-- [GitHub Issues](https://github.com/danielhipskind/blockingmachine/issues)
-- [GitHub Discussions](https://github.com/danielhipskind/blockingmachine/discussions)
+
+- [GitHub Issues](https://github.com/greigh/blockingmachine/issues)
+- [GitHub Discussions](https://github.com/greigh/blockingmachine/discussions)
 
 ### Reporting Bugs
+
 When reporting issues, include:
+
 1. CLI version: `blockingmachine --version`
 2. Node.js version: `node --version`
 3. MongoDB version: `mongod --version`

@@ -24,7 +24,7 @@ export class ExportCommand extends BaseCommand<ExportOptions> {
       const meta: FilterListMetadata = {
         title: config.meta?.title || "Blockingmachine Filter List",
         description: config.meta?.description || "Combined filter list from multiple sources",
-        homepage: config.meta?.homepage || "https://github.com/danielhipskind/blockingmachine",
+        homepage: config.meta?.homepage || "https://github.com/greigh/blockingmachine",
         version: config.meta?.version || "1.0.0",
         lastUpdated: new Date().toISOString()
       };

@@ -22,17 +22,20 @@ blockingmachine --version
 ## Development Setup
 
 1. Clone the repository:
+
 ```bash
-git clone https://github.com/danielhipskind/blockingmachine.git
+git clone https://github.com/greigh/blockingmachine.git
 cd blockingmachine
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Setup MongoDB:
+
 ```bash
 # Using Homebrew
 brew tap mongodb/brew
@@ -43,6 +46,7 @@ brew services start mongodb-community
 ```
 
 4. Create configuration:
+
 ```bash
 # Initialize configuration
 blockingmachine init
@@ -67,18 +71,21 @@ $HOME/
 ## Environment Setup
 
 1. Set Node.js options:
+
 ```bash
 # Add to your ~/.zshrc or ~/.bash_profile
 export NODE_OPTIONS="--max-old-space-size=4096"
 ```
 
 2. Configure MongoDB access:
+
 ```bash
 # Add to your ~/.zshrc or ~/.bash_profile
 export BLOCKINGMACHINE_MONGODB_URI="mongodb://localhost:27017/blockingmachine"
 ```
 
 3. Setup paths:
+
 ```bash
 # Add to your ~/.zshrc or ~/.bash_profile
 export BLOCKINGMACHINE_HOME="$HOME/.blockingmachine"
@@ -88,6 +95,7 @@ export PATH="$PATH:$BLOCKINGMACHINE_HOME/bin"
 ## Verification
 
 1. Check system requirements:
+
 ```bash
 # Check Node.js version
 node --version  # Should be ≥ v20.0.0
@@ -100,6 +108,7 @@ npm --version  # Should be ≥ v9.0.0
 ```
 
 2. Verify installation:
+
 ```bash
 # Check CLI version
 blockingmachine --version
@@ -116,6 +125,7 @@ blockingmachine test mongodb
 ### Common Installation Issues
 
 1. **Node.js Version Mismatch**
+
 ```bash
 # Using nvm to install correct version
 nvm install 20
@@ -123,6 +133,7 @@ nvm use 20
 ```
 
 2. **MongoDB Connection Issues**
+
 ```bash
 # Check MongoDB service
 brew services list | grep mongodb
@@ -132,6 +143,7 @@ brew services restart mongodb-community
 ```
 
 3. **Permission Issues**
+
 ```bash
 # Fix npm permissions
 sudo chown -R $USER:$GROUP ~/.npm

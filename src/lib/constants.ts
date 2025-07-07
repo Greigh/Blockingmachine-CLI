@@ -4,10 +4,10 @@ export const defaultMetaConfig: FilterMetaConfig = {
   title: "Blockingmachine Filter List",
   description: "Combined filter list from multiple sources",
   madeby: "Blockingmachine",
-  homepage: "https://github.com/danielhipskind/blockingmachine",
-  website: "https://github.com/danielhipskind/blockingmachine",
+  homepage: "https://github.com/greigh/blockingmachine",
+  website: "https://github.com/greigh/blockingmachine",
   expires: "1 day",
-  version: "1.0.0",
+  version: "3.0.0",
   license: "BSD-3-Clause",
   lastUpdated: new Date().toISOString(),
   stats: {

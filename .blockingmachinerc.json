@@ -92,7 +92,7 @@
     },
     {
       "name": "Blockingmachine Rules",
-      "url": "https://raw.githubusercontent.com/danielhipskind/blockingmachine/main/filters/input/blockingmachine-rules.txt",
+      "url": "https://raw.githubusercontent.com/greigh/blockingmachine/main/filters/input/blockingmachine-rules.txt",
       "category": "blockingmachine",
       "enabled": true,
       "priority": 5
