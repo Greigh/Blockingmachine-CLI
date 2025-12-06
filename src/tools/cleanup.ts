@@ -1,8 +1,8 @@
-import { unlink, readdir, access } from 'fs/promises';
-import path from 'path';
-import { connectDB, disconnectDB } from '../lib/db.js';
-import { createLogger } from '../lib/logger.js';
-import type { AppConfig } from '../types.js';
+import { unlink, readdir, access } from "fs/promises";
+import path from "path";
+import { connectDB, disconnectDB } from "../lib/db.js";
+import { createLogger } from "../lib/logger.js";
+import type { AppConfig } from "../types.js";
 
 interface CleanupOptions {
   dropCollections?: boolean;
@@ -15,30 +15,33 @@ export async function cleanup(options: CleanupOptions): Promise<void> {
 
   try {
     // Database cleanup
-    if (process.env.NODE_ENV === 'development' && options.dropCollections) {
+    if (process.env.NODE_ENV === "development" && options.dropCollections) {
       await connectDB(options.config.mongodb);
       dbConnected = true;
       await disconnectDB();
-      logger.info('🧹 Database dropped (Development Mode)');
+      logger.info("🧹 Database dropped (Development Mode)");
     }
 
     // Clean output directory
-    logger.info('🧹 Cleaning output directory...');
-    const outputDir = options.config.output?.directory || './filters/output';
+    logger.info("🧹 Cleaning output directory...");
+    const outputDir = options.config.output?.directory || "./filters/output";
 
     await cleanOutputDirectory(outputDir, logger);
   } catch (error) {
-    logger.error('❌ Cleanup failed:', error);
+    logger.error("❌ Cleanup failed:", error);
     throw error;
   } finally {
     if (dbConnected) {
       await disconnectDB();
-      logger.info('Disconnected from MongoDB.');
+      logger.info("Disconnected from MongoDB.");
     }
   }
 }
 
-async function cleanOutputDirectory(outputDir: string, logger: ReturnType<typeof createLogger>): Promise<void> {
+async function cleanOutputDirectory(
+  outputDir: string,
+  logger: ReturnType<typeof createLogger>,
+): Promise<void> {
   try {
     await access(outputDir);
     const files = await readdir(outputDir);
@@ -53,8 +56,10 @@ async function cleanOutputDirectory(outputDir: string, logger: ReturnType<typeof
 
     logger.info(`Cleaned ${cleanedCount} file(s) from ${outputDir}`);
   } catch (error: any) {
-    if (error.code === 'ENOENT') {
-      logger.warn(`Output directory ${outputDir} does not exist. Skipping file cleanup.`);
+    if (error.code === "ENOENT") {
+      logger.warn(
+        `Output directory ${outputDir} does not exist. Skipping file cleanup.`,
+      );
     } else {
       throw error;
     }

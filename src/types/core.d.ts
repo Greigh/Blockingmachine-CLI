@@ -1,4 +1,4 @@
-declare module '@blockingmachine/core' {
+declare module "@blockingmachine/core" {
   export interface FilterListMetadata {
     title?: string;
     description?: string;
@@ -14,10 +14,10 @@ declare module '@blockingmachine/core' {
     processing: any;
     [key: string]: any;
   };
-  
+
   export function exportWithOptions(
     outputPath: string,
     meta: FilterListMetadata,
-    options: any
+    options: any,
   ): Promise<any>;
 }

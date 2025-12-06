@@ -1,16 +1,25 @@
-import { Logger } from './lib/logger.js';
+import { Logger } from "./lib/logger.js";
 
 // Categories
 export enum CategoryType {
-  ADVERTISING = 'advertising',
-  TRACKING = 'tracking',
-  MALICIOUS = 'malicious',
-  SOCIAL = 'social',
-  UTILITY = 'utility',
-  CUSTOM = 'custom'
+  ADVERTISING = "advertising",
+  TRACKING = "tracking",
+  MALICIOUS = "malicious",
+  SOCIAL = "social",
+  UTILITY = "utility",
+  CUSTOM = "custom",
 }
 
-export type CategoryName = keyof typeof CategoryType | 'blockingmachine' | 'privacy' | 'security' | 'mobile' | 'gaming' | 'dns' | 'annoyances' | 'custom';
+export type CategoryName =
+  | keyof typeof CategoryType
+  | "blockingmachine"
+  | "privacy"
+  | "security"
+  | "mobile"
+  | "gaming"
+  | "dns"
+  | "annoyances"
+  | "custom";
 
 export interface Category {
   name: CategoryName;
@@ -21,90 +30,90 @@ export interface Category {
 
 export const CATEGORIES: Record<CategoryName, Category> = {
   ADVERTISING: {
-    name: 'ADVERTISING',
-    description: 'Advertising domains',
+    name: "ADVERTISING",
+    description: "Advertising domains",
     priority: 10,
-    enabled: true
+    enabled: true,
   },
   TRACKING: {
-    name: 'TRACKING',
-    description: 'Tracking and telemetry domains',
+    name: "TRACKING",
+    description: "Tracking and telemetry domains",
     priority: 20,
-    enabled: true
+    enabled: true,
   },
   MALICIOUS: {
-    name: 'MALICIOUS',
-    description: 'Malware and phishing domains',
+    name: "MALICIOUS",
+    description: "Malware and phishing domains",
     priority: 0,
-    enabled: true
+    enabled: true,
   },
   SOCIAL: {
-    name: 'SOCIAL',
-    description: 'Social media domains',
+    name: "SOCIAL",
+    description: "Social media domains",
     priority: 30,
-    enabled: false
+    enabled: false,
   },
   UTILITY: {
-    name: 'UTILITY',
-    description: 'Utility and functional domains',
+    name: "UTILITY",
+    description: "Utility and functional domains",
     priority: 40,
-    enabled: false
+    enabled: false,
   },
   CUSTOM: {
-    name: 'CUSTOM',
-    description: 'Custom user-defined domains',
+    name: "CUSTOM",
+    description: "Custom user-defined domains",
     priority: 5,
-    enabled: true
+    enabled: true,
   },
   // Add the missing string literal categories that your validators check
   blockingmachine: {
-    name: 'blockingmachine',
-    description: 'Blockingmachine list',
+    name: "blockingmachine",
+    description: "Blockingmachine list",
     priority: 5,
-    enabled: true
+    enabled: true,
   },
   privacy: {
-    name: 'privacy',
-    description: 'Privacy protection domains',
+    name: "privacy",
+    description: "Privacy protection domains",
     priority: 15,
-    enabled: true
+    enabled: true,
   },
   security: {
-    name: 'security',
-    description: 'Security threats',
+    name: "security",
+    description: "Security threats",
     priority: 0,
-    enabled: true
+    enabled: true,
   },
   mobile: {
-    name: 'mobile',
-    description: 'Mobile app tracking',
+    name: "mobile",
+    description: "Mobile app tracking",
     priority: 25,
-    enabled: true
+    enabled: true,
   },
   gaming: {
-    name: 'gaming',
-    description: 'Gaming related ads',
+    name: "gaming",
+    description: "Gaming related ads",
     priority: 35,
-    enabled: false
+    enabled: false,
   },
   dns: {
-    name: 'dns',
-    description: 'DNS related domains',
+    name: "dns",
+    description: "DNS related domains",
     priority: 45,
-    enabled: true
+    enabled: true,
   },
   annoyances: {
-    name: 'annoyances',
-    description: 'Annoyances and popups',
+    name: "annoyances",
+    description: "Annoyances and popups",
     priority: 50,
-    enabled: false
+    enabled: false,
   },
   custom: {
-    name: 'custom',
-    description: 'Custom domains',
+    name: "custom",
+    description: "Custom domains",
     priority: 5,
-    enabled: true
-  }
+    enabled: true,
+  },
 };
 
 // Source definitions
@@ -123,7 +132,12 @@ export interface FilterSource extends Source {
 }
 
 // Rule-related types
-export type RuleType = 'domain' | 'regex' | 'exception' | 'cosmetic' | 'unknown';
+export type RuleType =
+  | "domain"
+  | "regex"
+  | "exception"
+  | "cosmetic"
+  | "unknown";
 
 // Simplified modifier type - just strings now
 export type RuleModifier = string;
@@ -231,16 +245,16 @@ export interface ExportOptions {
 }
 
 // Make sure SupportedFormat is also defined
-export type SupportedFormat = 
-  | 'hosts'
-  | 'dnsmasq' 
-  | 'unbound' 
-  | 'bind' 
-  | 'privoxy' 
-  | 'shadowrocket' 
-  | 'adguard' 
-  | 'abp' 
-  | 'all';
+export type SupportedFormat =
+  | "hosts"
+  | "dnsmasq"
+  | "unbound"
+  | "bind"
+  | "privoxy"
+  | "shadowrocket"
+  | "adguard"
+  | "abp"
+  | "all";
 
 // Filter list metadata
 export interface FilterMetaConfig {

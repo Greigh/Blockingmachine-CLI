@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "declaration": true,
     "sourceMap": true,
+    "isolatedModules": true,
     "typeRoots": [
       "./node_modules/@types",
       "./src/types"
@@ -19,6 +20,7 @@
   ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "src/__tests__"
   ]
 }

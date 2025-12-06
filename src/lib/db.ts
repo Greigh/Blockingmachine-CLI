@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import type { StoredRule, MongoConfig } from '../types.js';
+import mongoose from "mongoose";
+import type { StoredRule, MongoConfig } from "../types.js";
 
 export async function connectDB(config: MongoConfig): Promise<void> {
   await mongoose.connect(config.uri, config.options);
@@ -22,17 +22,19 @@ const ruleSchema = new mongoose.Schema({
     sourceInfo: {
       category: { type: String, required: true },
       trusted: { type: Boolean, default: false },
-      url: String
+      url: String,
     },
-    tags: [String]
+    tags: [String],
   },
-  variants: [{
-    rule: String,
-    source: String, // Changed from sourceId to source
-    dateAdded: Date,
-    modifiers: [String], // Changed from objects to simple strings
-    tags: [String]
-  }]
+  variants: [
+    {
+      rule: String,
+      source: String, // Changed from sourceId to source
+      dateAdded: Date,
+      modifiers: [String], // Changed from objects to simple strings
+      tags: [String],
+    },
+  ],
 });
 
-export const StoredRuleModel = mongoose.model<StoredRule>('Rule', ruleSchema);
+export const StoredRuleModel = mongoose.model<StoredRule>("Rule", ruleSchema);

@@ -1,4 +1,4 @@
-import type { FilterMetaConfig } from '../types.js';
+import type { FilterMetaConfig } from "../types.js";
 
 export const defaultMetaConfig: FilterMetaConfig = {
   title: "Blockingmachine Filter List",
@@ -13,6 +13,6 @@ export const defaultMetaConfig: FilterMetaConfig = {
   stats: {
     totalRules: 0,
     blockingRules: 0,
-    unblockingRules: 0
-  }
+    unblockingRules: 0,
+  },
 };

@@ -1,5 +1,5 @@
-import type { AppConfig } from '../types.js';
-import type { Logger } from '../lib/logger.js';
+import type { AppConfig } from "../types.js";
+import type { Logger } from "../lib/logger.js";
 
 export interface CommandOptions {
   config: AppConfig;
@@ -25,11 +25,14 @@ export abstract class BaseCommand<T = any> {
 
   abstract execute(options?: T): Promise<CommandResult>;
 
-  protected success(data?: any, message = 'Operation completed successfully'): CommandResult {
+  protected success(
+    data?: any,
+    message = "Operation completed successfully",
+  ): CommandResult {
     return {
       success: true,
       message,
-      data
+      data,
     };
   }
 
@@ -38,17 +41,17 @@ export abstract class BaseCommand<T = any> {
     this.logger.error(message);
     return {
       success: false,
-      message
+      message,
     };
   }
 
   protected handleError(error: unknown): CommandResult {
     if (error instanceof Error) {
       return this.failure(error);
-    } else if (typeof error === 'string') {
+    } else if (typeof error === "string") {
       return this.failure(error);
     } else {
-      return this.failure('An unknown error occurred');
+      return this.failure("An unknown error occurred");
     }
   }
 }

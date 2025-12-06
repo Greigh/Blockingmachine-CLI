@@ -1,4 +1,3 @@
-
 <div align="center">
   <img src="../../assets/blockingmachine.png" width="200" alt="Blockingmachine Logo" />
 
@@ -12,6 +11,7 @@
 [![NPM VERSION](https://badge.fury.io/js/@blockingmachine%2Fcli.svg)](https://www.npmjs.com/package/@blockingmachine/cli)
 [![NPM DOWNLOADS](https://img.shields.io/npm/dt/@blockingmachine/cli)](https://www.npmjs.com/package/@blockingmachine/cli)
 [![CODE SIZE](https://img.shields.io/github/languages/code-size/greigh/blockingmachine-cli)](https://github.com/greigh/blockingmachine-cli)
+
 </div>
 
 ## Description
@@ -41,7 +41,7 @@ blockingmachine export adguard
 
 ## Timeline
 
-### Current Release (v1.0.0-beta.3)
+### Current Release (v1.0.0-beta.7)
 
 - 🚀 Full integration with @blockingmachine/core
 - 💪 TypeScript support
@@ -261,14 +261,14 @@ blockingmachine validate --fix
   ```bash
   # Fork and clone the repository
   git clone https://github.com/yourusername/blockingmachine-cli.git
-  
+
   # Install dependencies
   cd blockingmachine
   npm install
-  
+
   # Run tests
   npm test
-  
+
   # Start in development mode
   npm run dev
   ```
@@ -278,10 +278,10 @@ blockingmachine validate --fix
   ```bash
   # Run all tests
   npm test
-  
+
   # Run specific test suite
   npm test -- --grep "rule processing"
-  
+
   # Run with coverage
   npm run test:coverage
   ```
@@ -314,7 +314,7 @@ ENABLE_PARALLEL_PROCESSING=true
    ```bash
    # Check MongoDB status
    brew services list | grep mongodb
-   
+
    # Start MongoDB if needed
    brew services start mongodb-community
    ```
